@@ -1,0 +1,52 @@
+module.exports = {
+  branches: [
+    "main",
+    { name: "dev", channel: "beta", prerelease: "beta" }
+  ],
+  tagFormat: "v${version}",
+  plugins: [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        preset: "conventionalcommits",
+        releaseRules: [
+          { type: "chore", scope: "deps", release: "patch" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        preset: "conventionalcommits",
+        presetConfig: {
+          types: [
+            { type: "feat", section: "Features" },
+            { type: "feature", section: "Features" },
+            { type: "fix", section: "Bug Fixes" },
+            { type: "perf", section: "Performance Improvements" },
+            { type: "revert", section: "Reverts" },
+            { type: "chore", scope: "deps", section: "Dependency Updates" },
+            { type: "chore", scope: "deps-dev", section: "Dependency Updates" },
+            { type: "chore", scope: "deps-ci", section: "Dependency Updates" }
+          ]
+        }
+      }
+    ],
+    [
+      "@droidsolutions-oss/semantic-release-nuget",
+      {
+        projectPath: "src/Transiever.SaslClient/Transiever.SaslClient.csproj",
+        usePackageVersion: true,
+        nugetRegistries: [
+          {
+            name: "nuget",
+            type: "nuget",
+            url: "https://api.nuget.org/v3/index.json",
+            tokenEnvVar: "NUGET_API_KEY"
+          }
+        ]
+      }
+    ],
+    ["@semantic-release/github", { draftRelease: false }]
+  ]
+};

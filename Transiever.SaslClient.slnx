@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Transiever.SaslClient.UnitTest/Transiever.SaslClient.UnitTest.csproj" />
+    <Project Path="src/Transiever.SaslClient/Transiever.SaslClient.csproj" />
+  </Folder>
+</Solution>
