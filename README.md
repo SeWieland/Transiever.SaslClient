@@ -27,10 +27,14 @@ For SCRAM-SHA-256-PLUS, it supplies attempt-owned
 This library does not acquire, refresh, store, or revoke OAuth tokens; manage
 certificates; select mechanisms; or implement a network protocol.
 
-See the [authentication guide](docs/authentication.md) for lifecycle,
-security, memory ownership, and failure behavior.
-The [architecture guide](docs/architecture.md) describes the host boundary,
-and [testing](docs/testing.md) describes offline conformance coverage.
+## Documentation Map
+
+Start here, then follow the focused guides:
+
+* [library guide](src/Transiever.SaslClient/README.md) for public API and package usage.
+* [authentication](docs/authentication.md) for mechanism lifecycle, security, memory ownership, and failures.
+* [architecture](docs/architecture.md) for the host boundary and responsibility split.
+* [testing](docs/testing.md) for deterministic offline test policy.
 
 ## Development
 
@@ -46,3 +50,11 @@ dotnet pack src/Transiever.SaslClient/Transiever.SaslClient.csproj --configurati
 Stable releases come from `main`; beta prereleases come from `dev`.
 GitHub Actions publish the library package to NuGet.org using trusted
 publishing.
+
+## AI usage
+
+Transiever is a personal hobby project created to solve practical problems I have encountered myself.
+
+AI is used heavily throughout its development. It supports research, design exploration, implementation, debugging, and documentation.
+
+The project is developed using test-driven development and reviewed by a human, me. Its direction, behavior, and quality remain guided by the problems it is intended to solve.
