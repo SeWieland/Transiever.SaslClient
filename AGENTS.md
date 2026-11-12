@@ -43,13 +43,14 @@ same contract across every document.
 ```bash
 dotnet restore Transiever.SaslClient.slnx
 dotnet build Transiever.SaslClient.slnx --configuration Release --no-restore
-dotnet test Transiever.SaslClient.slnx --configuration Release --no-build
+dotnet test --solution Transiever.SaslClient.slnx --configuration Release --no-build
 dotnet pack src/Transiever.SaslClient/Transiever.SaslClient.csproj --configuration Release --no-build
 ```
 
 Tests are deterministic and offline.
 Provider credentials, live servers, and sibling repositories are never needed
 for the normal build or test path.
+Tests use .NET 10 native Microsoft.Testing.Platform.
 
 ## Non-negotiables
 

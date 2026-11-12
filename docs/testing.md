@@ -3,6 +3,7 @@
 The repository's normal test path is deterministic and offline.
 It does not require a mail server, provider account, OAuth token, certificate
 file, Docker, or a sibling checkout.
+The test project uses .NET 10 native Microsoft.Testing.Platform with xUnit v3.
 
 ## Required checks
 
@@ -11,7 +12,7 @@ Run from the repository root:
 ```bash
 dotnet restore Transiever.SaslClient.slnx
 dotnet build Transiever.SaslClient.slnx --configuration Release --no-restore
-dotnet test Transiever.SaslClient.slnx --configuration Release --no-build
+dotnet test --solution Transiever.SaslClient.slnx --configuration Release --no-build
 dotnet pack src/Transiever.SaslClient/Transiever.SaslClient.csproj --configuration Release --no-build
 ```
 
