@@ -34,7 +34,7 @@ jobs:
         run: dotnet build Transiever.SaslClient.slnx --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test Transiever.SaslClient.slnx --configuration Release --no-build
+        run: dotnet test --solution Transiever.SaslClient.slnx --configuration Release --no-build
 
       - name: Pack
         run: dotnet pack src/Transiever.SaslClient/Transiever.SaslClient.csproj --configuration Release --no-build --output out
